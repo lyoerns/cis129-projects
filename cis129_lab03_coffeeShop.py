@@ -34,25 +34,24 @@ final_calc = tax_calc + subtotal
 final_cost = round(final_calc, 2)
 
 
-##CURRENT ISSUES:
-#prices do not have placeholder 0 in hundreths place
-
 print('***************************************\n\nMy Coffee and Muffin Shop Receipt')
+coffee_display = str(coffee_price)
 if coffee_num == 1:
-  print(coffee_num, 'Coffee at $', coffee_price, 'each')
+  print(coffee_num, 'Coffee at $' + coffee_display, 'each: $', format(coffee_total, '.2f'))
 if coffee_num > 1:
-  print(coffee_num, 'Coffees at $', coffee_price, 'each')
+  print(coffee_num, 'Coffees at $' + coffee_display, 'each: $', format(coffee_total, '.2f'))
 if coffee_num == 0:
-  print(coffee_num, 'Coffees at $', coffee_price, 'each')
+  print(coffee_num, 'Coffees at $' + coffee_display, 'each: $', format(coffee_total, '.2f'))
 # combining coffee_num > 1 and coffee_num == 0 into if/or statement created bug
 # where if coffee_num was 0, amount of coffees would not display on receipt
-
+muffin_display = str(muffin_price)
 if muffin_num == 1:
-  print(muffin_num, 'Muffin at $', muffin_price, 'each')
+  print(muffin_num, 'Muffin at $' + muffin_display, 'each: $', format(muffin_total, '.2f'))
 if muffin_num > 1 or muffin_num == 0:
-  print(muffin_num, 'Muffins at $', muffin_price, 'each')
+  print(muffin_num, 'Muffins at $' + muffin_display, 'each: $', format(muffin_total, '.2f'))
   #if statements used to pluralize "coffee" and "muffin" in receipt when necessary
-print('6% tax: $', tax_calc)
+print('6% tax: $', format(tax_calc, '.2f'))
 print('\n---------\n')
-print('Total: $', final_cost)
+print('Total: $', format(final_cost, '.2f'))
+#used format command to solve the lack of placeholder zero in displayed prices
 print('***************************************')
