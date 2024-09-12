@@ -13,7 +13,6 @@ tax_per = .06
 # above variables allow for easier modification of code 
 # under real-world circumstances of fluctuating tax and item prices
 
-# add if statement to pluralize coffee and muffins in receipt when necessary
 
 print('***************************************\n')
 print('My Coffee and Muffin Shop')
@@ -35,8 +34,15 @@ final_calc = tax_calc + subtotal
 final_cost = round(final_calc, 2)
 
 print('***************************************\n\nMy Coffee and Muffin Shop Receipt')
-print(coffee_num, 'Coffee at $', coffee_price, 'each')
-print(muffin_num, 'Muffins at $', muffin_price, 'each')
+if coffee_num == 1:
+  print(coffee_num, 'Coffee at $', coffee_price, 'each')
+if coffee_num > 1 or muffin_num == 0:
+  print(coffee_num, 'Coffees at $', coffee_price, 'each')
+if muffin_num == 1:
+  print(muffin_num, 'Muffin at $', muffin_price, 'each')
+if muffin_num > 1 or muffin_num == 0:
+  print(muffin_num, 'Muffins at $', muffin_price, 'each')
+  #if statements used to pluralize "coffee" and "muffin" in receipt when necessary
 print('6% tax: $', tax_calc)
 print('\n---------\n')
 print('Total: $', final_cost)
