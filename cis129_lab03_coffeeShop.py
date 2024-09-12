@@ -33,6 +33,7 @@ final_calc = tax_calc + subtotal
 
 final_cost = round(final_calc, 2)
 
+
 ##CURRENT ISSUES:
 #prices do not have placeholder 0 in hundreths place
 
@@ -45,6 +46,7 @@ if coffee_num == 0:
   print(coffee_num, 'Coffees at $', coffee_price, 'each')
 # combining coffee_num > 1 and coffee_num == 0 into if/or statement created bug
 # where if coffee_num was 0, amount of coffees would not display on receipt
+
 if muffin_num == 1:
   print(muffin_num, 'Muffin at $', muffin_price, 'each')
 if muffin_num > 1 or muffin_num == 0:
